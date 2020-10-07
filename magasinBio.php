@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./magasinBio.html">Magasins bio</a>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./magasinBio.php">Magasins bio</a>
                     </li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./enseigne.html">Enseignes
                             Eco-responsable</a></li>
@@ -44,6 +44,7 @@
     </nav>
 
     <div class="container-fluid" style="width: 20%;">
+        
 
     </div>
     <!-- Bootstrap core JS-->
@@ -56,6 +57,32 @@
     <script src="assets/mail/contact_me.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+
+<!--
+    <?php
+
+    try {
+      // Connexion
+      $db = new PDO('mysql:host=localhost;dbname=workshop', 'root', '');
+      //$db = new PDO('mysql:$host;$dbname', $login, $password);
+      echo "<p>Connexion réussie.</p>\n";
+      //récupération des information à imprimer et filtrage
+      $dbl = "SELECT * FROM entreprises
+      WHERE nomentreprise != 'NULL'
+      AND adressepostale != 'NULL'
+      AND lien != 'NULL'
+      AND description != 'NULL'
+      AND image != 'NULL'";
+      //Impression du tableau
+      $res = $db->query($dbl);
+       echo "<table>\n <caption>Liste des Etudiants</caption>\n";
+       foreach ($res as $l)
+       echo "nom:" . $l["nomentreprise"] . ", adress:" . $l["adressepostale"] . ", lien:" . $l["lien"] . ", description:" . $l["description"] .", image:" . $l["image"] . "\n";
+       echo "</table>\n\n";
+    } catch(PDOException $erreur) {
+        echo "<p>Erreur : " . $erreur->getMessage() . "</p>\n";
+    }
+  ?>-->
 </body>
 
 </html>
